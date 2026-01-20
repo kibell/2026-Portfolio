@@ -63,7 +63,7 @@ export const About = () => {
             </h1>
             <p
               className="fs-4 info-text text-uppercase fw-bold mb-3"
-              style={{ fontFamily: "Comic Sans MS, cursive" }}
+              style={{ fontFamily: "Comic Sans MS, san-serif" }}
             >
               Senior Front-End Developer
             </p>
@@ -92,7 +92,7 @@ export const About = () => {
             <Code size={48} color="#EAC8A6" className="mb-3 mx-auto d-block" />
             <h3
               className="fs-4 mb-2 fw-bold text-black text-center"
-              style={{ fontFamily: "Comic Sans MS, cursive" }}
+              style={{ fontFamily: "Comic Sans MS, san-serif" }}
             >
               Clean Code
             </h3>
@@ -115,7 +115,7 @@ export const About = () => {
             <Zap size={48} className="mb-3 text-primary mx-auto d-block" />
             <h3
               className="fs-4 mb-2 fw-bold text-center"
-              style={{ fontFamily: "Comic Sans MS, cursive" }}
+              style={{ fontFamily: "Comic Sans MS, san-serif" }}
             >
               Fast Delivery
             </h3>
@@ -138,7 +138,7 @@ export const About = () => {
             <Coffee size={48} className="mb-3 text-primary mx-auto d-block" />
             <h3
               className="fs-4 mb-2 fw-bold text-center info-text"
-              style={{ fontFamily: "Comic Sans MS, cursive" }}
+              style={{ fontFamily: "Comic Sans MS, san-serif" }}
             >
               Always Learning
             </h3>
@@ -159,7 +159,7 @@ export const About = () => {
       >
         <h2
           className="fs-2 mb-4 fw-bold"
-          style={{ fontFamily: "Comic Sans MS, cursive" }}
+          style={{ fontFamily: "Comic Sans MS, san-serif" }}
         >
           <span className="text-primary">★</span> Skills
         </h2>
@@ -171,7 +171,7 @@ export const About = () => {
               <h3
                 className="fs-5 fw-bold mb-3"
                 style={{
-                  fontFamily: "Comic Sans MS, cursive",
+                  fontFamily: "Comic Sans MS, san-serif",
                   color: "var(--theme-color-blue-500)",
                 }}
               >
@@ -208,7 +208,7 @@ export const About = () => {
               <h3
                 className="fs-5 fw-bold mb-3"
                 style={{
-                  fontFamily: "Comic Sans MS, cursive",
+                  fontFamily: "Comic Sans MS, san-serif",
                   color: "var(--theme-color-blue-600)",
                 }}
               >
@@ -241,7 +241,7 @@ export const About = () => {
               <h3
                 className="fs-5 fw-bold mb-3"
                 style={{
-                  fontFamily: "Comic Sans MS, cursive",
+                  fontFamily: "Comic Sans MS, san-serif",
                   color: "var(--theme-color-blue-600)",
                 }}
               >
@@ -273,7 +273,7 @@ export const About = () => {
               <h3
                 className="fs-5 fw-bold mb-3"
                 style={{
-                  fontFamily: "Comic Sans MS, cursive",
+                  fontFamily: "Comic Sans MS, san-serif",
                   color: "var(--theme-color-blue-500)",
                 }}
               >
@@ -309,7 +309,7 @@ export const About = () => {
       <div className="col-md-4 p-4 mb-5 brdr-panel bg-warning halftone-pattern comic-brdr">
         <h2
           className="fs-2 mb-4 fw-bold"
-          style={{ fontFamily: "Comic Sans MS, cursive" }}
+          style={{ fontFamily: "Comic Sans MS, san-serif" }}
         >
           <span className="text-primary">★</span> Origin Story
         </h2>
