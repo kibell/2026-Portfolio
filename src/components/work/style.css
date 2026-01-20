@@ -1,0 +1,58 @@
+
+
+.wrkName {
+  color: #fff;
+  font-family: 'Poller One', cursive;
+  font-size: 5rem;
+}
+
+.divider {
+  border: 5px solid grey;
+}
+.theme-border {
+  border: var(--theme-color) .5rem solid;
+  background: var(--theme-black);
+  border-radius: 1rem;
+  box-shadow: 14px 10px 45px black;
+}
+
+.workSec li {
+  color: #fff;
+  margin-bottom: .5rem;
+}
+
+.active-border {
+  border: 3px solid var(--highlights) !important;
+  box-shadow: 0 0 15px var(--theme-color);
+}
+
+.hover-work {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid aliceblue;
+}
+
+.hover-work:hover {
+  border: 2px solid var(--highlights);
+  cursor: pointer;
+}
+
+.b-rad-4 {
+  border-radius: 4%;
+}
+
+.emp-img {
+  align-items: center;
+  width: 200px;
+}
+@media screen and (max-width: 480px) {
+  .wrkName {
+    font-size: 2rem;
+  }
+
+  .beginning {
+    margin: 0
+  }
+}

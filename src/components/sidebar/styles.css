@@ -1,0 +1,70 @@
+
+
+.sideBar ul li .icons{
+    margin-top: 40px;
+}
+
+
+.resumeP{
+    text-align: center;
+}
+
+.iconP{
+    font-size: 2.5rem;
+    color: black;
+  
+}
+
+img.fallimg {
+    width: 150px;
+    position: fixed;
+    top: 4rem;
+}
+
+.icons{
+    font-size: 2.5rem;
+    color: black;
+  
+}
+
+.icons:hover, .iconP:hover{
+    color:#7B92F9
+
+}
+a {
+    text-decoration: none;
+    color: rgb(168, 178, 209);
+}
+
+.sideBar{
+    width: 40px;
+    position: absolute;
+    bottom: 42vh;
+    left: 40px;
+    right: auto;
+    z-index: 10;
+    color: rgb(168, 178, 209);
+    visibility: visible;
+    margin-bottom: 25px;
+
+}
+
+.sideBar ul{
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;  
+    top: 27rem;
+    position: fixed;
+    gap: 1.5rem
+}
+
+@media only screen and (max-width: 1328px)  {
+    .sideBar{ 
+        visibility: hidden;
+        position: absolute;
+  }
+}

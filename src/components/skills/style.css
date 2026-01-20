@@ -1,0 +1,29 @@
+.icon:hover {
+color: #F2C84B;
+}
+.icon {
+  color: #fff
+}
+
+#skillSec {
+  margin-top: 5rem;
+  
+}
+
+.font-rem-5 {
+font-size:  5rem;
+}
+
+
+.skillName {
+  color: #fff;
+  font-family: 'Poller One', cursive;
+  font-size: 4rem;
+  
+}
+
+.skillCube {
+    top: -23rem !important;
+  
+}
+

@@ -1,0 +1,38 @@
+ .wave-container {
+  position: relative;
+  background: #2c3e50;
+  height: 300px; /* Try increasing this if the wave is cut off */
+  overflow: visible;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 165px;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(147, 51, 234, 0.25) 50%, rgba(236, 72, 153, 0.2) 100%);
+  z-index: 2;
+}
+
+.wave::before, .wave::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+}
+
+.wave::before {
+  width: 55%;
+  height: 109%;
+  background-color: #fff;
+  right: -1.5%;
+  top: 60%;
+}
+.wave::after {
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(147, 51, 234, 0.25) 50%, rgba(236, 72, 153, 0.2) 100%);
+  left: -1.5%;
+  top: 40%;
+} 

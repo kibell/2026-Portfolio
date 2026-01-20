@@ -1,0 +1,84 @@
+.footer-content h4{
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+  }
+  
+  
+  .footer-content .asterisk{
+    margin: 2.4rem 0
+  }
+  
+  .footer-content-about{
+    margin-bottom: 5.4rem;
+  }
+  
+  .footer-content-about p{
+    line-height: 2;
+  }
+
+  footer{
+    padding: 7.9rem 0;
+    background-color: var(--theme-black);
+    border: var(--theme-color) 2px solid;
+    color: white;
+    text-align: center;
+    position: relative;
+  
+  }
+  .kblogo{
+width: 100px;
+  }
+
+  
+.back-to-top{
+    width: 7rem;
+    height: 7rem;
+    background-color: var(--theme-black);
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border-top: var(--theme-color) solid 2px;
+    
+  }
+
+  .cursive{
+    font-family: cursive;
+    font-size: 24px;
+  }
+
+
+  .back-to-top i{
+    display: block;
+    color: #fff;
+    font-size: 2rem;
+    padding: 2rem;
+    animation: up 2s infinite
+  }
+
+  .fas{
+        
+    display: flex;
+    justify-content: center;
+    color: #8892b0;
+    padding: 0;
+    margin: auto;
+    font-size: 40px;
+    margin-top: 20px;
+
+}
+
+.fas:hover{
+   
+    display: flex;
+    justify-content: center;
+    color: var(--theme-color);
+    padding: 0;
+    margin: auto;
+    font-size: 70px;
+
+}

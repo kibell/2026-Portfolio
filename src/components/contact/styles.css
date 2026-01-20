@@ -1,0 +1,7 @@
+.squat {
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    top: -12rem;
+    left: 20rem;
+}

@@ -1,0 +1,111 @@
+
+.font-italic {
+  font-style: italic !important;
+}
+
+.font-size-inherit {
+  font-size: inherit !important;
+}
+
+.text-left,
+.table td.text-left,
+.table th.text-left {
+  text-align: left !important;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.v-align-middle {
+  vertical-align: middle;
+}
+
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.no-float {
+  float: none !important;
+}
+
+.noMargin {
+  margin: 0 !important;
+}
+
+.flush {
+  padding-left: 0 !important;
+
+  padding-right: 0 !important;
+
+  margin-left: 0 !important;
+
+  margin-right: 0 !important;
+}
+
+.w3 {
+  width: 3% !important;
+}
+
+.w60 {
+  width: 60% !important;
+}
+
+.w90 {
+  width: 90%;
+}
+
+.w100 {
+  width: 100% !important;
+}
+
+/*height*/
+
+.min-height-60 {
+  min-height: 60px;
+}
+
+.ctrl-click {
+  min-width: fit-content !important;
+}
+
+.hidden_values {
+  visibility: hidden !important;
+}
+
+.box-shadow-none {
+  box-shadow: none;
+}
+
+.border-0 {
+  border: none !important;
+}
+
+.clear {
+  clear: both;
+}
+
+.clear-none {
+  clear: none;
+}
+
+.hidden,
+.hiddenOverride {
+  display: none !important;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.grid-row {
+  margin-top: 20px;
+}

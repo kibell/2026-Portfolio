@@ -1,0 +1,79 @@
+
+.nav-item{
+    letter-spacing: 4px;
+
+    
+}
+
+.navbar-toggler {
+    background-color: #edf6f9 !important;
+}
+
+.nav-link {
+    font-family: "Funnel Display" !important;
+    font-weight: 800;
+    font-size: 1.25rem !important;
+    color: var(--color-text-primary) !important;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    text-transform: uppercase !important;
+}
+
+.navbar-toggler:hover{
+    color: #091c38;
+}
+
+
+ul.navbar-nav {
+    display: flex;
+    gap: 4rem;
+}
+
+li.nav-item.btn {
+    border: solid 2px var(--color-border);
+    border-radius: 0 !important;
+    position: relative;
+    padding: 0;
+}
+
+li.nav-item.btn:hover{
+    background-color: var(--color-accent);
+}
+
+
+.mr{
+    margin-right: 12px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    /* background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px); */
+    justify-content: right !important;
+    height: 7rem;
+    
+}
+
+li.nav-item > a.nav-link {
+    text-transform: capitalize;
+}
+
+.navbar-nav {
+    flex-direction: row !important;
+}
+
+.nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: #edf6f9; */
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000; /* Ensure the header is above other content */
+  }
+
+  .logo {
+    width: 100px;
+  }
