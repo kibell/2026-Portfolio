@@ -201,7 +201,7 @@ const ProjectCard = ({ project, index }) => {
 
             <div className="pt-3 flex-grow-1 d-flex flex-column">
               <div className="d-flex align-items-start justify-content-between mb-3">
-                <h3 className="font-display fs-4 mb-0 text-uppercase">
+                <h3 className="font-display fs-4 mb-0 text-uppercase black-text">
                   {project.title}
                 </h3>
               </div>
@@ -226,7 +226,7 @@ const ProjectCard = ({ project, index }) => {
       <img
         src={project.frontImage}
         alt={project.title}
-        className="w-100 h-100 border border-2 border-dark"
+        className="w-100 h-100 border border-2 border-dark black-text"
         style={{
           objectFit: "cover",
           minHeight: "400px",
@@ -238,7 +238,7 @@ const ProjectCard = ({ project, index }) => {
 )}
 
               <div className="mb-3">
-                <p className="font-body mb-0">{project.description}</p>
+                <p className="font-body mb-0 black-text">{project.description}</p>
               </div>
 
               {/* Tech Stack */}

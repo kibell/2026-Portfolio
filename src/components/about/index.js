@@ -21,9 +21,6 @@ export const About = () => {
       {/* Hero Panel */}
       <div
         className="row mb-5  brdr-panel"
-        style={{
-          transform: "skew(-1deg)",
-        }}
       >
         <div className="panel-bg halftone-pattern col-12 d-flex flex-column flex-md-row gap-4 align-items-center p-4">
           <div className="position-relative">

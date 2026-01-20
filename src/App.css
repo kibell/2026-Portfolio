@@ -215,7 +215,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', cursive;
+  font-family: 'Roboto', sans-serif;
   letter-spacing: 0.05em;
 }
 
@@ -253,6 +253,10 @@ color: #fff;
 .bg-theme-yellow-600 {
   background-color: var(--theme-color-yellow-600) !important;
   color: var(--theme-color-white) !important;
+}
+
+.bg-theme-blue-200 {
+  background-color: var(--theme-color-blue-200) !important;
 }
 
 .bg-transparent {
@@ -498,6 +502,16 @@ color: #fff;
 
 .skew-panel > * {
   transform: skewX(2deg);
+}
+
+.main-container {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    display: inline;
+  }
 }
 
 /* Animations */

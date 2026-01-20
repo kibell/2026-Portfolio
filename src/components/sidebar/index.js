@@ -11,8 +11,10 @@ import {
   Globe,
   Smartphone,
   FileUser,
+  Mail,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import "./styles.css";
 
 const navItems = [
   { id: "about", label: "About Me", icon: User },
@@ -29,10 +31,21 @@ const navItems = [
   { id: "experience", label: "Experience", icon: Briefcase },
 ];
 
-export const Sidebar = ({ activeSection, onSectionChange }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+export const Sidebar = ({
+  activeSection,
+  onSectionChange,
+  isCollapsed,
+  setIsCollapsed,
+}) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState(["projects"]);
+  const [screenWidth, setScreenWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200,
+  );
+
+  if (screenWidth < 768 && !isCollapsed) {
+    setIsCollapsed = true;
+  }
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
       return document.documentElement.classList.contains("dark");
@@ -48,11 +61,36 @@ export const Sidebar = ({ activeSection, onSectionChange }) => {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Calculate width based on screen size
+  const getSidebarWidth = () => {
+    if (screenWidth >= 1600) {
+      // Desktop
+      return isCollapsed ? "80px" : "21rem";
+    } else if (screenWidth >= 992) {
+      // Tablet
+      return isCollapsed ? "80px" : "15rem";
+    } else if (screenWidth >= 576) {
+      // Large phone
+      return "75vw";
+    } else {
+      // Small phone
+      return "90vw";
+    }
+  };
+
   const toggleMenu = (menuId) => {
     setExpandedMenus((prev) =>
       prev.includes(menuId)
         ? prev.filter((id) => id !== menuId)
-        : [...prev, menuId]
+        : [...prev, menuId],
     );
   };
 
@@ -70,10 +108,11 @@ export const Sidebar = ({ activeSection, onSectionChange }) => {
       {/* Mobile Toggle Button */}
       <button
         onClick={() => setIsMobileOpen(!isMobileOpen)}
-        className="fixed top-4 left-4 z-50 d-lg-none btn btn-warning p-3"
+        className="position-fixed top-4 left-4 z-100 d-lg-none btn btn-warning p-3"
         style={{
           border: "3px solid #000",
           boxShadow: "3px 3px 0 #000",
+          zIndex: 90,
         }}
       >
         {isMobileOpen ? (
@@ -100,15 +139,15 @@ export const Sidebar = ({ activeSection, onSectionChange }) => {
       {/* Sidebar */}
       <aside
         className={cn(
-          "position-fixed position-lg-sticky d-flex flex-column",
-          "panel-bg-ly border-end brdr-panel ",
-          isMobileOpen ? "" : "d-none d-lg-flex"
+          "fixed-top position-lg-sticky d-flex flex-column",
+          "panel-bg border-end brdr-panel ",
+          isMobileOpen ? "" : "d-none d-lg-flex",
         )}
         style={{
           top: 0,
           left: 0,
           height: "100vh",
-          width: isCollapsed ? "80px" : "256px",
+          width: getSidebarWidth(),
           zIndex: 40,
           transition: "all 0.3s",
         }}
@@ -152,13 +191,14 @@ export const Sidebar = ({ activeSection, onSectionChange }) => {
                       }
                     }}
                     className={cn(
-                      "w-100 d-flex align-items-center gap-3 p-3 fw-bold",
-                      isActive ? "btn-prime" : "btn-sec"
+                      "w-100 d-flex align-items-center gap-3 fw-bold",
+                      isActive ? "btn-prime" : "btn-sec",
                     )}
                     style={{
                       border: "3px solid #000",
                       boxShadow: isActive ? "4px 4px 0 #000" : "2px 2px 0 #000",
-                      justifyContent: isCollapsed ? "center" : "flex-start",
+                      justifyContent: isCollapsed ? "center " : "flex-start",
+                      padding: isCollapsed ? "0.5rem" : "0.75rem 1rem",
                     }}
                   >
                     <Icon size={isCollapsed ? 28 : 20} />
@@ -195,10 +235,10 @@ export const Sidebar = ({ activeSection, onSectionChange }) => {
                               key={subItem.id}
                               onClick={() => handleSectionChange(subItem.id)}
                               className={cn(
-                                "btn w-100 d-flex align-items-center gap-3 p-2",
+                                "btn w-100 d-flex align-items-center gap-3 p-2 bg-theme-blue-200 black-text fw-medium",
                                 isSubActive
-                                  ? "btn-secondary"
-                                  : "btn-outline-secondary"
+                                  ? "panel-bg-blue "
+                                  : "btn-outline-secondary",
                               )}
                               style={{
                                 border: "2px solid #000",
@@ -241,16 +281,16 @@ export const Sidebar = ({ activeSection, onSectionChange }) => {
                 style={{ textDecoration: "none" }}
                 className={cn(
                   "black-text d-flex align-items-center",
-                  isCollapsed ? "justify-content-center" : "gap-3"
+                  isCollapsed ? "justify-content-center" : "gap-3",
                 )}
               >
-                <FileUser size={isCollapsed ? 28 : 20} />
+                <FileUser />
                 {!isCollapsed && <span>Download Resume</span>}
               </a>
             </button>
-{/* 
+
             <button
-              className="w-100 d-flex align-items-center gap-3 p-3 fw-bold halftone-pattern panel-bg-green comic-panel"
+              className="w-100 mt-2 d-flex align-items-center gap-3 p-3 fw-bold halftone-pattern panel-bg-green comic-panel"
               style={{
                 transition: "all 0.3s",
                 textDecoration: "none",
@@ -264,18 +304,17 @@ export const Sidebar = ({ activeSection, onSectionChange }) => {
               }}
             >
               <a
-                href="/resume/Kbell_Resume.pdf"
-                download="Kbell_Resume.pdf"
+                href="mailto:kitrickd.bell@gmail.com"
                 style={{ textDecoration: "none" }}
                 className={cn(
                   "black-text d-flex align-items-center",
-                  isCollapsed ? "justify-content-center" : "gap-3"
+                  isCollapsed ? "justify-content-center" : "gap-3",
                 )}
               >
-                <FileUser size={20} />
-                {!isCollapsed && <span>Download Resume</span>}
+                <Mail size={20} />
+                {!isCollapsed && <span>Email Me</span>}
               </a>
-            </button> */}
+            </button>
           </div>
         </nav>
 
