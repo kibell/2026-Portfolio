@@ -276,7 +276,7 @@ export const Sidebar = ({
               }}
             >
               <a
-                href="/resume/Kbell_Resume.pdf"
+                href={`${process.env.PUBLIC_URL}/Resume/Kbell_Resume.pdf`}
                 download="Kbell_Resume.pdf"
                 style={{ textDecoration: "none" }}
                 className={cn(
