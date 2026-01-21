@@ -21,7 +21,7 @@ export const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub", color: "#333" },
+    { icon: Github, href: "https://github.com/kibell", label: "GitHub", color: "#333" },
     { icon: Linkedin, href: "#", label: "LinkedIn", color: "#0077b5" },
     { icon: Twitter, href: "#", label: "Twitter", color: "#1da1f2" }
   ];
@@ -31,10 +31,12 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-dark text-light position-relative overflow-hidden">
+    <footer className="brdr-panel panel-bg-blue  halftone-pattern  offset-lg-1 ">
       {/* Background decoration */}
+
+    
       <div 
-        className="position-absolute w-100 h-100 opacity-25"
+        className="position-absolute opacity-25 "
         style={{
           background: 'linear-gradient(45deg, rgba(13, 110, 253, 0.1) 0%, rgba(111, 66, 193, 0.1) 100%)',
           zIndex: 0
@@ -47,12 +49,12 @@ export const Footer = () => {
           {/* Brand section */}
           <div className="col-lg-4 col-md-6 mb-4">
             <div className="mb-4">
-              <h3 className="h4 fw-bold text-white mb-3">
-                <span className="text-primary">Web</span> Developer
+              <h3 className="h4 fw-bold text-white mb-3 ">
+                <span className="color-red">Senior</span> Developer
               </h3>
               <p className="text-light opacity-75 mb-4">
-                Passionate about creating beautiful, functional web experiences that make a difference. 
-                Let's build something amazing together.
+                I can do all things through Christ who strengthens me. 
+                <br />-Philippians 4:13
               </p>
               
               {/* Contact info */}
@@ -75,13 +77,13 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="col-lg-2 col-md-6 mb-4">
-            <h5 className="text-white fw-semibold mb-3">Quick Links</h5>
+            <h5 className="text-white fw-semibold mb-3 text-left">Quick Links</h5>
             <ul className="list-unstyled">
               {quickLinks.map((link) => (
                 <li key={link.name} className="mb-2">
                   <a 
                     href={link.href} 
-                    className="text-light text-decoration-none opacity-75 d-block py-1"
+                    className="text-light text-decoration-none opacity-75 d-block py-1 text-left"
                     style={{ transition: 'all 0.3s ease' }}
                     onMouseEnter={(e) => {
                       e.target.style.opacity = '1';
@@ -101,15 +103,12 @@ export const Footer = () => {
 
           {/* Services */}
           <div className="col-lg-3 col-md-6 mb-4">
-            <h5 className="text-white fw-semibold mb-3">Services</h5>
+            <h5 className="text-white fw-semibold mb-3 text-left">Services</h5>
             <ul className="list-unstyled">
               {services.map((service) => (
                 <li key={service} className="mb-2">
-                  <span className="text-light opacity-75 d-flex align-items-center">
-                    <span 
-                      className="bg-primary rounded-circle me-2"
-                      style={{ width: '6px', height: '6px' }}
-                    />
+                  <span className="text-light opacity-75 d-flex align-items-center text-left" >
+                   
                     <small>{service}</small>
                   </span>
                 </li>
@@ -119,9 +118,9 @@ export const Footer = () => {
 
           {/* Newsletter & Social */}
           <div className="col-lg-3 col-md-6 mb-4">
-            <h5 className="text-white fw-semibold mb-3">Stay Connected</h5>
-            <p className="text-light opacity-75 small mb-3">
-              Follow me on social media for updates and insights.
+            <h5 className="text-white fw-semibold mb-3 text-left">Stay Connected</h5>
+            <p className="text-light opacity-75 small mb-3 text-left">
+              My Socials are down now this is just for show.
             </p>
             
             {/* Social Links */}
@@ -168,7 +167,7 @@ export const Footer = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <p className="text-light opacity-75 mb-0 small">
-                © 2025 Kitrick's Portfolio. All rights reserved.
+                © 2026 Kitrick's Portfolio. All rights reserved.
               </p>
             </div>
             <div className="col-md-6 text-md-end">

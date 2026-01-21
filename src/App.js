@@ -14,6 +14,9 @@ function App() {
   const [theme, setTheme] = useState("light");
   const [activeSection, setActiveSection] = useState("about");
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [contentKey, setContentKey] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
+  const [nextSection, setNextSection] = useState(null);
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
@@ -21,6 +24,20 @@ function App() {
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  const handleSectionChange = (section) => {
+    if (section === activeSection) return;
+
+    setIsExiting(true);
+    setNextSection(section);
+
+    // Wait for slide down animation to complete
+    setTimeout(() => {
+      setActiveSection(section);
+      setIsExiting(false);
+      setContentKey((prev) => prev + 1);
+    }, 1000);
   };
 
   const renderSection = () => {
@@ -48,15 +65,18 @@ function App() {
         {/* Sidebar */}
         <Sidebar
           activeSection={activeSection}
-          onSectionChange={setActiveSection}
+          onSectionChange={handleSectionChange}
           isCollapsed={isCollapsed}
           setIsCollapsed={setIsCollapsed}
         />
 
         {/* Main Content */}
         <div
+          key={contentKey}
           className={
             "flex-grow-1  p-md-5 p-sm-1 " +
+            (isExiting ? "content-slide-down" : "content-slide-in") +
+            " " +
             (isCollapsed ? "offset-md-1" : "offset-lg-2 offset-md-0")
           }
         >
@@ -64,7 +84,7 @@ function App() {
         </div>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </Fragment>
   );
 }

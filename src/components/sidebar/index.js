@@ -14,6 +14,7 @@ import {
   Mail,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import * as bootstrap from "bootstrap";
 import "./styles.css";
 
 const navItems = [
@@ -69,6 +70,18 @@ export const Sidebar = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    // Initialize Bootstrap tooltips
+    if (typeof window !== "undefined" && window.bootstrap) {
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]',
+      );
+      tooltipTriggerList.forEach((tooltipTriggerEl) => {
+        new window.bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    }
+  }, [isCollapsed]);
+
   // Calculate width based on screen size
   const getSidebarWidth = () => {
     if (screenWidth >= 1600) {
@@ -102,6 +115,15 @@ export const Sidebar = ({
   const cn = (...classes) => {
     return classes.filter(Boolean).join(" ");
   };
+
+  useEffect(() => {
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]',
+    );
+    tooltipTriggerList.forEach((el) => {
+      new bootstrap.Tooltip(el);
+    });
+  }, []);
 
   return (
     <>
@@ -172,7 +194,7 @@ export const Sidebar = ({
               const isActive =
                 activeSection === item.id ||
                 (activeSection && activeSection.startsWith(item.id + "-"));
-              // ...existing code...
+
               const hasSubItems = item.subItems && item.subItems.length > 0;
               const isExpanded = expandedMenus.includes(item.id);
 
@@ -190,6 +212,9 @@ export const Sidebar = ({
                         handleSectionChange(item.id);
                       }
                     }}
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title={isCollapsed ? item.label : ""}
                     className={cn(
                       "w-100 d-flex align-items-center gap-3 fw-bold",
                       isActive ? "btn-prime" : "btn-sec",
@@ -263,6 +288,9 @@ export const Sidebar = ({
 
             <button
               className="w-100 d-flex align-items-center gap-3 p-3 fw-bold halftone-pattern panel-bg-green comic-panel"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              title={isCollapsed ? "Download Resume" : ""}
               style={{
                 transition: "all 0.3s",
                 textDecoration: "none",
@@ -291,6 +319,9 @@ export const Sidebar = ({
 
             <button
               className="w-100 mt-2 d-flex align-items-center gap-3 p-3 fw-bold halftone-pattern panel-bg-green comic-panel"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              title={isCollapsed ? "Email Me" : ""}
               style={{
                 transition: "all 0.3s",
                 textDecoration: "none",
@@ -321,6 +352,9 @@ export const Sidebar = ({
         {/* Dark Mode Toggle */}
         <button
           onClick={() => setIsDark(!isDark)}
+          data-bs-toggle="tooltip"
+          data-bs-placement="right"
+          title={isCollapsed ? (isDark ? "Light Mode" : "Dark Mode") : ""}
           className="halftone-pattern dark-light-color mx-3 mb-3 d-flex align-items-center gap-3 p-3"
           style={{
             justifyContent: isCollapsed ? "center" : "flex-start",
@@ -333,6 +367,9 @@ export const Sidebar = ({
         {/* Collapse Toggle (Desktop) */}
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
+          data-bs-toggle="tooltip"
+          data-bs-placement="right"
+          title={isCollapsed ? "Expand Sidebar" : ""}
           className="btn btn-secondary d-none d-lg-flex align-items-center justify-content-center p-3"
           style={{
             borderTop: "4px solid #000",
