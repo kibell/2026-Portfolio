@@ -1,11 +1,9 @@
 import { Sidebar } from "./components/sidebar"; // Note: destructured import
-import Landing from "./components/landing";
 import About from "./components/about";
 import Work from "./components/work";
 import Education from "./components/education";
 import Footer from "./components/Footer";
 import Projects from "./components/projects";
-import Contact from "./components/contact";
 import "./App.css";
 
 import React, { Fragment, useEffect, useState } from "react";
@@ -37,6 +35,9 @@ function App() {
       setActiveSection(section);
       setIsExiting(false);
       setContentKey((prev) => prev + 1);
+
+      // Scroll to top of content
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }, 1000);
   };
 
@@ -61,7 +62,7 @@ function App() {
 
   return (
     <Fragment>
-      <div className="main-container">
+      <div className="main-container position-relative">
         {/* Sidebar */}
         <Sidebar
           activeSection={activeSection}

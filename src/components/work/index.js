@@ -56,7 +56,7 @@ export const Work = () => {
     >
       <div className="container">
         <div className="mb-5">
-          <h2 className="display-4 fw-bold black-text mb-3">Work Experience</h2>
+          <h2 className="display-4 fw-bold black-text mb-3  mtop-sm-4">Work Experience</h2>
           <div
             className="mx-auto"
             style={{

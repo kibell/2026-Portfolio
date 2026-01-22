@@ -1,4 +1,4 @@
-import { GraduationCap, Award, BookOpen, Dock, Info } from "lucide-react";
+import { Dock, Info } from "lucide-react";
 import React, { useState } from "react";
 import CertModal from "../certModal";
 import UMHB from "./images/umhbDip.png";
@@ -12,7 +12,7 @@ export const Education = () => {
   useEffect(() => {
     // Enable Bootstrap tooltips
     const tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      document.querySelectorAll('[data-bs-toggle="tooltip"]'),
     );
     tooltipTriggerList.forEach(function (tooltipTriggerEl) {
       new window.bootstrap.Tooltip(tooltipTriggerEl);
@@ -22,7 +22,8 @@ export const Education = () => {
   const education = [
     {
       progress: "bg-success",
-      focus: "Software Application Development, Software Design & Modeling,	Object Oriented App Development, Distributed App Development",
+      focus:
+        "Software Application Development, Software Design & Modeling,	Object Oriented App Development, Distributed App Development",
       complete: "COMPLETED ✓",
       index: 2,
       degree: "Master of Science in Software Application Development",
@@ -190,15 +191,15 @@ export const Education = () => {
   const [openCert, setOpenCert] = useState(null);
 
   return (
-    <section className="d-flex flex-column gap-4">
+    <section className="d-flex flex-column gap-4 ">
       {/* Section Header */}
       <div className="d-flex align-items-center gap-3">
-        <h2 className="font-display display-5 mb-0">
+        <h2 className="font-display display-5 mb-0   mtop-sm-4">
           <span className="color-blue px-3 py-2 d-inline-block ">
             EDUCATION
           </span>
         </h2>
-        <p className="black-text">
+        <p className="black-text   mtop-sm-4">
           Hover over the <Dock size={20} className="black-text" /> icons to view
           certificates
         </p>
@@ -213,17 +214,15 @@ export const Education = () => {
                 edu.index === 0
                   ? "bg-theme-yellow-600"
                   : edu.index === 1
-                  ? "bg-theme-yellow-600"
-                  : edu.index === 2
-                  ? "panel-bg-green"
-                  : "panel-bg-green"
+                    ? "bg-theme-yellow-600"
+                    : edu.index === 2
+                      ? "panel-bg-green"
+                      : "panel-bg-green"
               }`}
             >
               <div className="d-flex flex-column">
                 <div className="d-flex align-items-baseline justify-content-between">
-                  <h3 className="font-display fs-4 mb-3 ">
-                    {edu.degree}
-                  </h3>
+                  <h3 className="font-display fs-4 mb-3 ">{edu.degree}</h3>
 
                   <div className="d-flex align-items-center flex-column ms-2">
                     <button

@@ -541,10 +541,14 @@ color: #fff;
 .main-container {
   display: flex;
 }
-
 @media (max-width: 768px) {
   .main-container {
     display: inline;
+    margin-top: 4rem;
+  }
+
+  .mtop-sm-4 {
+    margin-top: 4rem !important;
   }
 }
 

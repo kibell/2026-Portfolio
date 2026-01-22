@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ExternalLink, Github, Eye } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import coronaApp from "./images/ctrack.gif";
 import letMeet from "./images/letsme.gif";
 import Solo from "./images/solo.gif";
@@ -217,9 +217,6 @@ const ProjectCard = ({ project, index }) => {
         muted
         className="w-100 h-100 border border-2 border-dark"
         style={{
-          objectFit: "cover",
-          minHeight: "400px",
-          maxHeight: "400px",
         }}
       />
     ) : (
@@ -228,9 +225,6 @@ const ProjectCard = ({ project, index }) => {
         alt={project.title}
         className="w-100 h-100 border border-2 border-dark black-text"
         style={{
-          objectFit: "cover",
-          minHeight: "400px",
-          maxHeight: "400px",
         }}
       />
     )}
@@ -299,7 +293,7 @@ const Projects = ({ filter = "all" }) => {
     <section className="d-flex flex-column gap-4">
       {/* Section Header */}
       <div className="d-flex align-items-center gap-3">
-        <h2 className="font-display display-5 mb-0">
+        <h2 className="font-display display-5 mb-0  mtop-sm-4">
           <span className="color-blue px-3 py-2 d-inline-block comic-border">
             {sectionTitle}
           </span>
