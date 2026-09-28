@@ -162,7 +162,7 @@ export const Sidebar = ({
       <aside
         className={cn(
           "fixed-top position-lg-sticky d-flex flex-column",
-          "panel-bg border-end brdr-panel ",
+          "panel-bg brdr-panel sidebar-brdr",
           isMobileOpen ? "" : "d-none d-lg-flex",
         )}
         style={{
@@ -176,7 +176,7 @@ export const Sidebar = ({
       >
         {/* Header */}
         <div
-          className="p-4 bg-theme-yellow halftone-pattern black-text text-center"
+          className="p-4 bg-theme-yellow  black-text text-center"
           style={{
             borderBottom: "4px solid #000",
           }}
@@ -216,15 +216,9 @@ export const Sidebar = ({
                     data-bs-placement="right"
                     title={isCollapsed ? item.label : ""}
                     className={cn(
-                      "w-100 d-flex align-items-center gap-3 fw-bold",
-                      isActive ? "btn-prime" : "btn-sec",
+                      "w-100 d-flex align-items-center gap-3 fw-bold p-2",
+                      isActive ? "btn-prime border-2px-ink" : "btn-sec border-2px",
                     )}
-                    style={{
-                      border: "3px solid #000",
-                      boxShadow: isActive ? "4px 4px 0 #000" : "2px 2px 0 #000",
-                      justifyContent: isCollapsed ? "center " : "flex-start",
-                      padding: isCollapsed ? "0.5rem" : "0.75rem 1rem",
-                    }}
                   >
                     <Icon size={isCollapsed ? 28 : 20} />
                     {!isCollapsed && (
@@ -260,15 +254,11 @@ export const Sidebar = ({
                               key={subItem.id}
                               onClick={() => handleSectionChange(subItem.id)}
                               className={cn(
-                                "btn w-100 d-flex align-items-center gap-3 p-2 bg-theme-blue-200 black-text fw-medium",
+                                "btn w-100 d-flex align-items-center gap-3 p-2 bg-theme-blue-200 black-text fw-medium ",
                                 isSubActive
                                   ? "panel-bg-blue "
                                   : "btn-outline-secondary",
                               )}
-                              style={{
-                                border: "2px solid #000",
-                                boxShadow: "2px 2px 0 #000",
-                              }}
                             >
                               <SubIcon size={16} />
                               <span>{subItem.label}</span>
@@ -287,7 +277,7 @@ export const Sidebar = ({
             {!isCollapsed && <p className="fw-bold black-text">Action Links</p>}
 
             <button
-              className="w-100 d-flex align-items-center gap-3 p-3 fw-bold halftone-pattern panel-bg-green comic-panel"
+              className="w-100 d-flex align-items-center gap-3 p-2 fw-bold cta-secondary border-4px-ink"
               data-bs-toggle="tooltip"
               data-bs-placement="right"
               title={isCollapsed ? "Download Resume" : ""}
@@ -308,7 +298,7 @@ export const Sidebar = ({
                 download="Kbell_Resume.pdf"
                 style={{ textDecoration: "none" }}
                 className={cn(
-                  "black-text d-flex align-items-center",
+                  "white-text d-flex align-items-center",
                   isCollapsed ? "justify-content-center" : "gap-3",
                 )}
               >
@@ -318,7 +308,7 @@ export const Sidebar = ({
             </button>
 
             <button
-              className="w-100 mt-2 d-flex align-items-center gap-3 p-3 fw-bold halftone-pattern panel-bg-green comic-panel"
+              className="w-100 mt-2 d-flex align-items-center gap-3 p-2 fw-bold   border-4px panel-bg "
               data-bs-toggle="tooltip"
               data-bs-placement="right"
               title={isCollapsed ? "Email Me" : ""}
